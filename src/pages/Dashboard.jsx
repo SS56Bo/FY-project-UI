@@ -1,7 +1,7 @@
 import React from "react";
 
-function SignInPage() {
+function Dashboard() {
   return <div></div>;
 }
 
-export default SignInPage;
+export default Dashboard;
