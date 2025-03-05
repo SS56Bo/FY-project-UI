@@ -74,6 +74,23 @@ button:active {
   transform: scale(0.95);
 }
 
+/* Sign-in link styling */
+.signup-container p {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.signup-container p a {
+  color: #ffeb3b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-container p a:hover {
+  color: #ffd700;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .signup-form {

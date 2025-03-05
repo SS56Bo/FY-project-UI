@@ -1,17 +1,29 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SignUp.css"; // Import the CSS file
 
 function SignUp() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [ConfirmPW, setConfirmPW] = useState("");
+  const [error, setError] = useState("");
 
   // function to get name
   function getInfo(event) {
     event.preventDefault(); // Prevents page reload
+
+    if (password != ConfirmPW) {
+      setError("Password do not match!");
+      alert(error);
+      return;
+    }
+
+    setError("");
     console.log("Name:", name);
     console.log("Username:", username);
     console.log("Password:", password);
+    alert("Sign Up successful!");
   }
 
   // return function
@@ -45,10 +57,17 @@ function SignUp() {
         </div>
         <div className="input-group">
           <label>Confirm Password:</label>
-          <input type="password" placeholder="Confirm password" />
+          <input
+            type="password"
+            placeholder="Confirm password"
+            onChange={(e) => setConfirmPW(e.target.value)}
+          />
         </div>
         <button type="submit">Sign Up</button>
       </form>
+      <p>
+        Have an existing account? <Link to="/signin">Sign In</Link>{" "}
+      </p>
     </div>
   );
 }
